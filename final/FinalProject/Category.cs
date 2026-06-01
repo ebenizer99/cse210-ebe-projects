@@ -18,7 +18,20 @@ class Category
 
     public void RemoveItem(string title)
     {
-        _items.RemoveAll(item => item.GetTitle() == title);
+        PlannerItem itemToRemove = null;
+
+        foreach (PlannerItem item in _items)
+        {
+            if (item.GetTitle() == title)
+            {
+                itemToRemove = item;
+            }
+        }
+
+        if (itemToRemove != null)
+        {
+            _items.Remove(itemToRemove);
+        }
     }
 
     public void DisplayCategoryItems()
