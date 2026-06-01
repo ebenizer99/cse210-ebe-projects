@@ -54,4 +54,26 @@ class Planner
 
         Console.WriteLine("Item not found.");
     }
+
+    public void RemoveItem(string title)
+    {
+        foreach (Category category in _categories)
+        {
+            if (category.RemoveItem(title))
+            {
+                Console.WriteLine("Item removed.");
+                return;
+            }
+        }
+
+        Console.WriteLine("Item not found.");
+    }
+
+    public void DisplayAllReminders()
+    {
+        foreach (Category category in _categories)
+        {
+            category.DisplayReminders();
+        }
+    }
 }
