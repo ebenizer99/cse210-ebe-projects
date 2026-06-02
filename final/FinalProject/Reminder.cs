@@ -1,28 +1,19 @@
 using System;
 
-abstract class PlannerItem
+class Reminder
 {
-    private string _title;
-    private string _description;
+    private string _message;
     private string _date;
-    private bool _isComplete;
 
-    public PlannerItem(string title, string description, string date)
+    public Reminder(string message, string date)
     {
-        _title = title;
-        _description = description;
+        _message = message;
         _date = date;
-        _isComplete = false;
     }
 
-    public string GetTitle()
+    public string GetMessage()
     {
-        return _title;
-    }
-
-    public string GetDescription()
-    {
-        return _description;
+        return _message;
     }
 
     public string GetDate()
@@ -30,37 +21,9 @@ abstract class PlannerItem
         return _date;
     }
 
-    public bool IsComplete()
+    public void DisplayReminder()
     {
-        return _isComplete;
-    }
-
-    public void MarkComplete()
-    {
-        _isComplete = true;
-    }
-
-    public virtual void DisplayDetails()
-    {
-        string status;
-
-        if (_isComplete)
-        {
-            status = "Complete";
-        }
-        else
-        {
-            status = "Not Complete";
-        }
-
-        Console.WriteLine("Title: " + _title);
-        Console.WriteLine("Description: " + _description);
-        Console.WriteLine("Due Date: " + _date);
-        Console.WriteLine("Status: " + status);
-    }
-
-    public virtual string GetReminderMessage()
-    {
-        return "Reminder: " + _title + " is due on " + _date + ".";
+        Console.WriteLine("Reminder: " + _message);
+        Console.WriteLine("Date: " + _date);
     }
 }
