@@ -16,7 +16,7 @@ class Category
         _items.Add(item);
     }
 
-    public void RemoveItem(string title)
+    public bool RemoveItem(string title)
     {
         PlannerItem itemToRemove = null;
 
@@ -31,16 +31,29 @@ class Category
         if (itemToRemove != null)
         {
             _items.Remove(itemToRemove);
+            return true;
         }
+
+        return false;
     }
 
     public void DisplayCategoryItems()
     {
-        Console.WriteLine($"\n--- {_categoryName} ---");
+        Console.WriteLine("\n--- " + _categoryName + " ---");
 
         foreach (PlannerItem item in _items)
         {
             item.DisplayDetails();
+            Console.WriteLine(item.GetReminderMessage());
+        }
+    }
+
+    public void DisplayReminders()
+    {
+        Console.WriteLine("\n--- Reminders for " + _categoryName + " ---");
+
+        foreach (PlannerItem item in _items)
+        {
             Console.WriteLine(item.GetReminderMessage());
         }
     }

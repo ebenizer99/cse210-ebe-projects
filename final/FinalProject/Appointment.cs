@@ -15,12 +15,17 @@ class Appointment : PlannerItem
     public override void DisplayDetails()
     {
         base.DisplayDetails();
-        Console.WriteLine($"Time: {_time}");
-        Console.WriteLine($"Location: {_location}");
+
+        Console.WriteLine("Time: " + _time);
+        Console.WriteLine("Location: " + _location);
     }
 
     public override string GetReminderMessage()
     {
-        return $"Appointment Reminder: Be at {_location} at {_time}.";
+        return "Appointment Reminder: Be at " +
+               _location +
+               " at " +
+               _time +
+               ".";
     }
 }

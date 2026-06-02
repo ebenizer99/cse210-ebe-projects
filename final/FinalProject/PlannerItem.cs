@@ -7,7 +7,6 @@ private string _description;
 private string _date;
 private bool _isComplete;
 
-```
 public PlannerItem(string title, string description, string date)
 {
     _title = title;
@@ -64,6 +63,5 @@ public virtual string GetReminderMessage()
 {
     return "Reminder: " + _title + " is due on " + _date + ".";
 }
-```
-
 }
+

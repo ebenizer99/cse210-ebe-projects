@@ -13,11 +13,13 @@ class PersonalTask : PlannerItem
     public override void DisplayDetails()
     {
         base.DisplayDetails();
-        Console.WriteLine($"Personal Category: {_personalCategory}");
+        Console.WriteLine("Personal Category: " + _personalCategory);
     }
 
     public override string GetReminderMessage()
     {
-        return $"Personal Reminder: Remember your {_personalCategory} task.";
+        return "Personal Reminder: Remember your " +
+               _personalCategory +
+               " task.";
     }
 }
