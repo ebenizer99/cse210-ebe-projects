@@ -1,3 +1,7 @@
+// The Appointment class stores appointment information such as the title, description, date, time, and location.
+// It inherits from PlannerItem and provides appointment-specific details and reminder messages.
+
+
 using System;
 
 class Appointment : PlannerItem
